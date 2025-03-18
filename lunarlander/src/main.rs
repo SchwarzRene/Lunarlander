@@ -21,7 +21,7 @@ impl Table{
 }
 
 fn main(){
-    let t = Table::table( 100., 200. );
+    let mut t = Table::table( 100., 200. );
     let v = t.volume();
 
     println!( "{t:#?}" );
