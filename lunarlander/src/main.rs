@@ -1,29 +1,18 @@
-#[derive(Debug)]
-struct Table{
-    width : f64,
-    height : f64,
-    deepth : f64,
+enum Furnitures {
+    Table{ width : f64, height : f64 },
 }
 
-impl Table{
-    fn volume( &mut self ) -> f64 {
-        self.width = self.width + 1.;
-        self.width * self.height * self.deepth
-    }
 
-    fn table( width : f64, height : f64 ) -> Table{
-        Table{ 
-            width : width,
-            height : height,
-            deepth : 100.,
-        }
-    }
-}
 
 fn main(){
-    let mut t = Table::table( 100., 200. );
-    let v = t.volume();
+    let b = Furnitures::Table {
+        width : 100.,
+        height : 100.
+    };
 
-    println!( "{t:#?}" );
-    println!( "{v}" ); 
+}
+
+
+fn modifyFurnitures( f : Furnitures ){
+    f.Table.width
 }
